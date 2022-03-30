@@ -4,6 +4,46 @@
 
 // this file will show te implementation of Higher order function (returning a function from function)
 fun main() {
+
+    val spacesList = arrayListOf<Int>()
+
+    val tempString = "My name is usama"
+    val charactersArray = arrayListOf<String>()
+    var convertedString = ""
+    var index = 0
+    var remember = false
+
+    for (index in tempString.indices){
+        if (tempString[index] == ' '){
+            //spacesList.add(index)
+
+            remember = true
+        }
+
+        else{
+            if (remember){
+                charactersArray.add(tempString[index].uppercase())
+
+                remember = false
+            }
+
+            else{
+                charactersArray.add(tempString[index].toString())
+            }
+
+        }
+    }
+
+    for (e in charactersArray) {
+        print(e)
+    }
+
+//    var convertedString = ""
+//    for (element in spacesList){
+//        if ()
+//    }
+
+
     /*val whichMethod = chooseMethod(2)
 
     // invoking the method to console
@@ -27,9 +67,6 @@ fun main() {
 
 // this method will check the choice and return the method according to it
 fun chooseMethod(choice: Int): ()->(Unit){
-
-
-
 
     fun two(){
         print("This is two")
